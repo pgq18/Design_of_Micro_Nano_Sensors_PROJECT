@@ -37,3 +37,9 @@
 .\objects\main.o: ..\template\led.h
 .\objects\main.o: ..\template\gpio.h
 .\objects\main.o: ..\template\car_speed.h
+.\objects\main.o: ..\template\wheel.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+.\objects\main.o: ..\template\uart.h

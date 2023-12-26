@@ -2,15 +2,15 @@
 #include "gpio.h"
 #include "car_speed.h"
 
-void PWM_Config(){
+void PWM_Config(void){
 	
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-	GPIO_Config_PWM(RCC_AHB1Periph_GPIOA, GPIO_Pin_13);  // PWM ch1
+	GPIO_Config_PWM(RCC_AHB1Periph_GPIOA, GPIO_Pin_15);  // PWM ch1
 	GPIO_Config_PWM(RCC_AHB1Periph_GPIOA, GPIO_Pin_2);  // PWM ch3
 	GPIO_Config_PWM(RCC_AHB1Periph_GPIOA, GPIO_Pin_3);  // PWM ch4
 	GPIO_Config_PWM(RCC_AHB1Periph_GPIOB, GPIO_Pin_11); // PWM ch2
 	
-	GPIO_PinAFConfig(GPIOA, GPIO_PinSource0, GPIO_AF_TIM2);
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource15, GPIO_AF_TIM2);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_TIM2);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_TIM2);
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource3, GPIO_AF_TIM2);
