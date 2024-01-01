@@ -43,3 +43,4 @@
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 .\objects\main.o: ..\template\uart.h
+.\objects\main.o: ..\template\delay.h

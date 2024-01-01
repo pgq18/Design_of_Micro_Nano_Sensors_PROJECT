@@ -4,6 +4,9 @@
 #include "car_speed.h"
 #include "wheel.h"
 #include "uart.h"
+#include "delay.h"
+
+int stop;
 
 void USART3_IRQHandler(void){
 
@@ -11,12 +14,44 @@ void USART3_IRQHandler(void){
 
 	if(USART_GetFlagStatus(USART3, USART_FLAG_RXNE) != RESET){
 		temp = USART_ReceiveData(USART3);
-		USART3_Send_Byte(USART3, temp);
+		//USART3_Send_Byte(USART3, temp);
 		//USART3_Send_Byte(USART3, 0x11);
 	}
 	
 	USART_ClearITPendingBit(USART3, USART_IT_RXNE);
-
+//	Speed_Stop();
+	
+	if(stop == 1) {
+		if(temp != 0x2){
+			Speed_Set1(60);
+			Speed_Set2(60);
+			Speed_Set3(60);
+			Speed_Set4(60);
+		}
+		stop = 0;
+	}
+	else {
+		switch (temp){
+			case 0x0:
+				Speed_Up();
+				break;
+			case 0x1:
+				Speed_Down();
+				break;
+			case 0x2:
+				Speed_Stop();
+				stop = 1;
+				break;
+			case 0x3:
+				Turn_Left();
+				break;
+			case 0x4:
+				Turn_Right();
+				break;
+			default:
+				break;
+		}
+	}
 }
 
 int main(void){
@@ -51,21 +86,45 @@ int main(void){
 //	  Speed_Set3(wheel_leftback.PWM);
 //	  Speed_Set4(wheel_rightback.PWM);
 		
-		Speed_Set1(0);
-	  Speed_Set2(0);
-	  Speed_Set3(0);
-	  Speed_Set4(0);
-
-	LED_ON();
-
-	int lor;
-	lor = -1;
-	// USART_SendData(UART4, 0x00e1);
-	// USART3->DR = (0x00ff & (uint16_t)0x01FF);
-
+	delay_ms(500);
+	delay_ms(500);
+	delay_ms(500);
+	delay_ms(500);
+	delay_ms(500);
+	delay_ms(500);
+	Speed_Start();
+	stop = 0;
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	Turn_Left();
+//	Speed_Up();
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+	Speed_Down();
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	Turn_Right();
+//	delay_ms(500);
+//	delay_ms(500);
+//	delay_ms(500);
+//	Speed_Stop();
+	
 	while(1){
-		// UART4_Send_Byte(UART4, 0xcf); 
-		// USART_SendData(UART4, 0x0101);
+		delay_ms(500);
+		delay_ms(500);
 		LED_ON();
+		delay_ms(500);
+		delay_ms(500);
+		LED_OFF();
 	};
 }

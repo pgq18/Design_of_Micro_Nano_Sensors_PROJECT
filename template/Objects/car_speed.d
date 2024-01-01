@@ -36,3 +36,4 @@
 .\objects\car_speed.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\car_speed.o: gpio.h
 .\objects\car_speed.o: car_speed.h
+.\objects\car_speed.o: delay.h
