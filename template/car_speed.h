@@ -16,3 +16,5 @@ void Speed_Up(void);
 void Turn_Left(void);
 
 void Turn_Right(void);
+
+void Speed_Stop_to_Start(void);

@@ -1,7 +1,7 @@
 .\objects\car_speed.o: car_speed.c
 .\objects\car_speed.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\objects\car_speed.o: .\Libraries\CMSIS\Include\core_cm4.h
-.\objects\car_speed.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\car_speed.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\car_speed.o: .\Libraries\CMSIS\Include\core_cmInstr.h
 .\objects\car_speed.o: .\Libraries\CMSIS\Include\core_cmFunc.h
 .\objects\car_speed.o: .\Libraries\CMSIS\Include\core_cmSimd.h

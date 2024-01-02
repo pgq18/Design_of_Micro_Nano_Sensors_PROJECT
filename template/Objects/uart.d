@@ -1,7 +1,7 @@
 .\objects\uart.o: uart.c
 .\objects\uart.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\objects\uart.o: .\Libraries\CMSIS\Include\core_cm4.h
-.\objects\uart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uart.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uart.o: .\Libraries\CMSIS\Include\core_cmInstr.h
 .\objects\uart.o: .\Libraries\CMSIS\Include\core_cmFunc.h
 .\objects\uart.o: .\Libraries\CMSIS\Include\core_cmSimd.h

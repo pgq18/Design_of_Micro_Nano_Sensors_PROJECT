@@ -11,7 +11,7 @@ int stop;
 void USART3_IRQHandler(void){
 
 	uint8_t temp;
-
+  
 	if(USART_GetFlagStatus(USART3, USART_FLAG_RXNE) != RESET){
 		temp = USART_ReceiveData(USART3);
 		//USART3_Send_Byte(USART3, temp);
@@ -22,30 +22,36 @@ void USART3_IRQHandler(void){
 //	Speed_Stop();
 	
 	if(stop == 1) {
-		if(temp != 0x2){
-			Speed_Set1(60);
-			Speed_Set2(60);
-			Speed_Set3(60);
-			Speed_Set4(60);
+		if(temp != 0x3){
+			Speed_Stop_to_Start();
+			GPIO_SetBits(GPIOD, GPIO_Pin_12);
+			GPIO_SetBits(GPIOD, GPIO_Pin_10);
+			GPIO_SetBits(GPIOD, GPIO_Pin_8);
+			stop = 0;
 		}
-		stop = 0;
+		else {
+			stop = 1;
+		}
 	}
 	else {
 		switch (temp){
-			case 0x0:
-				Speed_Up();
-				break;
 			case 0x1:
-				Speed_Down();
+				Speed_Up();
+			  GPIO_SetBits(GPIOD, GPIO_Pin_12); // G
 				break;
 			case 0x2:
-				Speed_Stop();
-				stop = 1;
+				Speed_Down();
+				GPIO_SetBits(GPIOD, GPIO_Pin_10); // Y
 				break;
 			case 0x3:
-				Turn_Left();
+				Speed_Stop();
+				GPIO_SetBits(GPIOD, GPIO_Pin_8);// R
+				stop = 1;
 				break;
 			case 0x4:
+				Turn_Left();
+				break;
+			case 0x5:
 				Turn_Right();
 				break;
 			default:
@@ -57,6 +63,13 @@ void USART3_IRQHandler(void){
 int main(void){
 	//LED;
 	GPIO_Config(RCC_AHB1Periph_GPIOA, GPIO_Pin_1);
+	GPIO_Config(RCC_AHB1Periph_GPIOD, GPIO_Pin_8); // R
+	GPIO_Config(RCC_AHB1Periph_GPIOD, GPIO_Pin_10); // Y
+	GPIO_Config(RCC_AHB1Periph_GPIOD, GPIO_Pin_12); // G
+	
+	//GPIO_SetBits(GPIOD, GPIO_Pin_8);// R
+	//GPIO_SetBits(GPIOD, GPIO_Pin_10);// Y
+	//GPIO_SetBits(GPIOD, GPIO_Pin_12); // G
 	
 	//UART4
 	USART3_NVIC_Config();
@@ -108,7 +121,7 @@ int main(void){
 //	delay_ms(500);
 //	delay_ms(500);
 //	delay_ms(500);
-	Speed_Down();
+//  Speed_Down();
 //	delay_ms(500);
 //	delay_ms(500);
 //	delay_ms(500);
@@ -126,5 +139,8 @@ int main(void){
 		delay_ms(500);
 		delay_ms(500);
 		LED_OFF();
+	  GPIO_ResetBits(GPIOD, GPIO_Pin_8);// R
+	  GPIO_ResetBits(GPIOD, GPIO_Pin_10);// Y
+	  GPIO_ResetBits(GPIOD, GPIO_Pin_12); // G
 	};
 }

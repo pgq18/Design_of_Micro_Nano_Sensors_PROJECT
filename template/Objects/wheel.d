@@ -2,7 +2,7 @@
 .\objects\wheel.o: wheel.h
 .\objects\wheel.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\objects\wheel.o: .\Libraries\CMSIS\Include\core_cm4.h
-.\objects\wheel.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wheel.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\wheel.o: .\Libraries\CMSIS\Include\core_cmInstr.h
 .\objects\wheel.o: .\Libraries\CMSIS\Include\core_cmFunc.h
 .\objects\wheel.o: .\Libraries\CMSIS\Include\core_cmSimd.h
@@ -35,7 +35,7 @@
 .\objects\wheel.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\objects\wheel.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\wheel.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
-.\objects\wheel.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\wheel.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\wheel.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\wheel.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+.\objects\wheel.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\wheel.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\wheel.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\string.h
+.\objects\wheel.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\float.h

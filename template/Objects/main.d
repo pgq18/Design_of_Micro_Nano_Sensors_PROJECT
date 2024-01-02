@@ -1,7 +1,7 @@
 .\objects\main.o: User\src\main.c
 .\objects\main.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\objects\main.o: .\Libraries\CMSIS\Include\core_cm4.h
-.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: .\Libraries\CMSIS\Include\core_cmInstr.h
 .\objects\main.o: .\Libraries\CMSIS\Include\core_cmFunc.h
 .\objects\main.o: .\Libraries\CMSIS\Include\core_cmSimd.h
@@ -38,9 +38,9 @@
 .\objects\main.o: ..\template\gpio.h
 .\objects\main.o: ..\template\car_speed.h
 .\objects\main.o: ..\template\wheel.h
-.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+.\objects\main.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\float.h
 .\objects\main.o: ..\template\uart.h
 .\objects\main.o: ..\template\delay.h

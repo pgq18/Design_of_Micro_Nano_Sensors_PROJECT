@@ -3,7 +3,7 @@
 #include "car_speed.h"
 #include "delay.h"
 
-int speed;
+int car_speed;
 
 void PWM_Config(void){
 	
@@ -131,14 +131,20 @@ void Speed_Set4(int32_t speed){
 	}
 }
 
-
+void Speed_Stop_to_Start(void) {
+	Speed_Set1(70);
+	Speed_Set2(70);
+	Speed_Set3(70);
+	Speed_Set4(70);
+	car_speed = 1;
+}
 
 void Speed_Start(void) {
-	Speed_Set1(75);
-	Speed_Set2(75);
-	Speed_Set3(75);
-	Speed_Set4(75);
-	speed = 1;
+	Speed_Set1(70);
+	Speed_Set2(70);
+	Speed_Set3(70);
+	Speed_Set4(70);
+	car_speed = 1;
 }
 
 void Speed_Stop(void) {
@@ -146,104 +152,69 @@ void Speed_Stop(void) {
 	Speed_Set2(0);
 	Speed_Set3(0);
 	Speed_Set4(0);
-	speed = -1;
+	car_speed = -1;
 }
 
 void Speed_Down(void) {
-	if(speed == 1){
-		delay_ms(150);
-		Speed_Set1(70);
-		Speed_Set2(70);
-		Speed_Set3(70);
-		Speed_Set4(70);
-		delay_ms(150);
-		Speed_Set1(65);
-		Speed_Set2(65);
-		Speed_Set3(65);
-		Speed_Set4(65);
-		delay_ms(150);
-		Speed_Set1(60);
-		Speed_Set2(60);
-		Speed_Set3(60);
-		Speed_Set4(60);
+	if(1){
+//		Speed_Set1(70);
+//		Speed_Set2(70);
+//		Speed_Set3(70);
+//		Speed_Set4(70);
+//		delay_ms(150);
+		Speed_Set1(58);
+		Speed_Set2(58);
+		Speed_Set3(58);
+		Speed_Set4(58);
 	}
-	speed = 0;
+	car_speed = 0;
 }
 
 void Speed_Up(void) {
-	if(speed == 0){
-		delay_ms(150);
-		Speed_Set1(65);
-		Speed_Set2(65);
-		Speed_Set3(65);
-		Speed_Set4(65);
-		delay_ms(150);
+	if(1){
 		Speed_Set1(70);
 		Speed_Set2(70);
 		Speed_Set3(70);
 		Speed_Set4(70);
-		delay_ms(150);
-		Speed_Set1(75);
-		Speed_Set2(75);
-		Speed_Set3(75);
-		Speed_Set4(75);
 	}
-	speed = 1;
+	car_speed = 1;
 	
 }
 
 void Turn_Left(void) {
-	if(speed == -1){
+	if(car_speed == -1){
 		return;
 	}
-	else if(speed == 1){
+	else if(car_speed == 1){
 		Speed_Down();
 	}
 	Speed_Set1(65);
 	Speed_Set2(90);
 	Speed_Set3(65);
 	Speed_Set4(90);
-	delay_ms(200); // turn left
-	Speed_Set1(65);
-	Speed_Set2(65);
-	Speed_Set3(65);
-	Speed_Set4(65);
-	delay_ms(500); // go straight
-	Speed_Set1(90);
-	Speed_Set2(65);
-	Speed_Set3(90);
-	Speed_Set4(65);
-	delay_ms(200); // turn right
-	Speed_Set1(60);
-	Speed_Set2(60);
-	Speed_Set3(60);
-	Speed_Set4(60);
+	delay_ms(500); // turn left
+	Speed_Set1(58);
+	Speed_Set2(58);
+	Speed_Set3(58);
+	Speed_Set4(58);
+	car_speed = 0;
 }
 
 void Turn_Right(void) {
-	if(speed == -1){
+	if(car_speed == -1){
 		return;
 	}
-	else if(speed == 1){
+	else if(car_speed == 1){
 		Speed_Down();
 	}
 	Speed_Set1(90);
 	Speed_Set2(65);
 	Speed_Set3(90);
 	Speed_Set4(65);
-	delay_ms(200); // turn right
-	Speed_Set1(65);
-	Speed_Set2(65);
-	Speed_Set3(65);
-	Speed_Set4(65);
-	delay_ms(500); // go straight
-	Speed_Set1(65);
-	Speed_Set2(90);
-	Speed_Set3(65);
-	Speed_Set4(90);
-	delay_ms(200); // turn left
-	Speed_Set1(60);
-	Speed_Set2(60);
-	Speed_Set3(60);
-	Speed_Set4(60);
+	delay_ms(500); // turn right
+	Speed_Set1(58);
+	Speed_Set2(58);
+	Speed_Set3(58);
+	Speed_Set4(58);
+	car_speed = 0;
 }
