@@ -140,11 +140,11 @@ void Speed_Stop_to_Start(void) {
 }
 
 void Speed_Start(void) {
-	Speed_Set1(70);
-	Speed_Set2(70);
-	Speed_Set3(70);
-	Speed_Set4(70);
-	car_speed = 1;
+	Speed_Set1(58);
+	Speed_Set2(58);
+	Speed_Set3(58);
+	Speed_Set4(58);
+	car_speed = 0;
 }
 
 void Speed_Stop(void) {

@@ -1,7 +1,7 @@
 .\objects\gpio.o: gpio.c
 .\objects\gpio.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\objects\gpio.o: .\Libraries\CMSIS\Include\core_cm4.h
-.\objects\gpio.o: C:\Users\86138\AppData\Local\ARM\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gpio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\gpio.o: .\Libraries\CMSIS\Include\core_cmInstr.h
 .\objects\gpio.o: .\Libraries\CMSIS\Include\core_cmFunc.h
 .\objects\gpio.o: .\Libraries\CMSIS\Include\core_cmSimd.h
