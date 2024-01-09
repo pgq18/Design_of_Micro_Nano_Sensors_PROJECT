@@ -1,2 +1,2 @@
-# Design of Micro Nano Sensors PROJECT
-# SME, SUSTech 
+# Design of Micro and Nano Sensors PROJECT
+# SME315
